@@ -12,7 +12,20 @@ This extension provides support for [Declarative Gradle](https://github.com/grad
 There are two ways to install the extension
 
 1.  Use the repository itself. Check out the code, open it up in VSCode, run `npm install`, and launch the `Extension` run configuration.
-1.  Install the extension from [here](https://gradle.github.io/declarative-vscode-extension/)
+1.  Install the extension from [the published page](https://gradle.github.io/declarative-vscode-extension/)
+
+### Build and package locally
+
+- Install dependencies: `npm install`
+- Type-check, lint, and bundle: `npm run check && npm run lint && npm run build`
+- Package VSIX: `npm run package` (produces `declarative-gradle-support-<version>.vsix` in repo root)
+
+### Deploy static site with download link
+
+- Run `npm run deploy` to:
+  - Copy the latest `*.vsix` to `site/`
+  - Update `site/index.html` download link to the current version
+  - Commit and publish via your usual process (e.g. GitHub Pages in this repo)
 
 ### Configuration
 

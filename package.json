@@ -19,7 +19,9 @@
   "scripts": {
     "lint": "eslint src/",
     "check": "tsc -p .",
-    "build": "node esbuild.mjs"
+    "build": "node esbuild.mjs",
+    "package": "vsce package",
+    "deploy": "node ./scripts/deploy.mjs"
   },
   "dependencies": {
     "@types/vscode": "^1.101.0",
