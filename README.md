@@ -1,0 +1,41 @@
+# Declarative Gradle - VSCode Extension
+
+> [!WARNING]  
+> This extension is in early development and is not yet ready for general use.
+
+This extension provides support for [Declarative Gradle](https://github.com/gradle/declarative-gradle) feature using the [Declarative Gradle LSP](https://github.com/gradle/declarative-lsp).
+
+## How to use
+
+### Installation
+
+There are two ways to install the extension
+
+1.  Use the repository itself. Check out the code, open it up in VSCode, run `npm install`, and launch the `Extension` run configuration.
+1.  Install the extension from [the published page](https://gradle.github.io/declarative-vscode-extension/)
+
+### Build and package locally
+
+- Install dependencies: `npm install`
+- Type-check, lint, and bundle: `npm run check && npm run lint && npm run build`
+- Package VSIX: `npm run package` (produces `declarative-gradle-support-<version>.vsix` in repo root)
+
+### Deploy static site with download link
+
+- Run `npm run deploy` to:
+  - Copy the latest `*.vsix` to `site/`
+  - Update `site/index.html` download link to the current version
+  - Commit and publish via your usual process (e.g. GitHub Pages in this repo)
+
+### Configuration
+
+After installing the extension, two settings need to be defined.
+On the UI editor, the settings can be found under the "Extensions > Gradle Declarative" menu.
+
+The two configurations are:
+
+- Java Home (`gradle.declarative.javaHome`): A minimum Java 8 compatible JRE, required to run the language server.
+- Lsp Jar (`gradle.declarative.lspJar`): The path to the Declarative Gradle LSP JAR file. This can be acquired by checking out and building the [Declartive Gradle LSP](https://github.com/gradle/declarative-lsp) project. Please refer to the project's README for more information.
+
+The "Output > Declarative Gradle" window should provide detailed logging.
+If the extension is not working as expected, please check this output for any errors.
